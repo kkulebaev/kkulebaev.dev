@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(0, 229, 255, 0.08), transparent 28%),
+    radial-gradient(circle at 18% 18%, rgba(248, 172, 255, 0.05), transparent 18%),
+    linear-gradient(180deg, #131313 0%, #101010 100%);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.hero h1,
+.section h2,
+.project-card h3,
+.timeline h3 {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.topbar__path,
+.topbar__nav,
+.topbar__status,
+.eyebrow,
+.button,
+.signal-row span,
+.signal-row strong,
+.command-list span,
+.section__meta,
+.project-card__bar,
+.project-card__tags,
+.stack-group h3,
+.stack-group li,
+.timeline__year,
+.contact-terminal__line,
+.contact-terminal__row,
+.hero__microcopy,
+.contact-panel__meta {
+  font-family: 'Space Mono', monospace;
+}
+
+.hero__lede,
+.stack-layout__intro p,
+.timeline p,
+.contact-panel__copy p:last-of-type,
+.project-card p {
+  margin: 0;
+  color: rgba(186, 201, 204, 0.85);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+  color: var(--cyan);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.eyebrow--secondary {
+  color: var(--violet);
+}
+
+.eyebrow__mark {
+  color: var(--violet);
+}

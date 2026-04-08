@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #e5e2e1;
+  background: #131313;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --bg: #131313;
+  --surface-lowest: #0e0e0e;
+  --surface-low: #1c1b1b;
+  --surface: #201f1f;
+  --surface-high: #2a2a2a;
+  --surface-highest: #353534;
+  --surface-bright: #393939;
+  --text: #e5e2e1;
+  --text-muted: #bac9cc;
+  --outline: rgba(132, 147, 150, 0.15);
+  --ghost-border: inset 0 0 0 1px rgba(132, 147, 150, 0.12);
+  --cyan: #00e5ff;
+  --cyan-soft: #c3f5ff;
+  --lime: #cbff3c;
+  --violet: #f8acff;
+  --shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}

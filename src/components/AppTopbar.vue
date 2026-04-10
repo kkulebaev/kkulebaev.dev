@@ -12,7 +12,7 @@ defineProps<Props>()
 
 <template>
   <header class="topbar">
-    <div class="topbar__path">{{ path }}</div>
+    <a href="/" class="topbar__path">{{ path }}</a>
 
     <nav class="topbar__nav" aria-label="Primary">
       <a v-for="link in links" :key="link.href" :href="link.href">{{ link.label }}</a>

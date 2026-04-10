@@ -147,7 +147,7 @@
 .page {
   margin-left: 5.5rem;
   padding-top: 5.5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 6.5rem;
 }
 
 .hero,
@@ -204,4 +204,31 @@
 
 .section__meta span {
   color: var(--cyan);
+}
+
+.sysbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  padding-left: calc(1rem + 5.5rem);
+  background: rgba(14, 14, 14, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 -1px 0 rgba(132, 147, 150, 0.08);
+  color: rgba(229, 226, 225, 0.44);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.sysbar strong {
+  color: rgba(229, 226, 225, 0.82);
+  font-weight: 400;
 }

@@ -1,5 +1,5 @@
 # ── Stage 1: Build ──────────────────────────────
-FROM node:24.12.0-alpine3.23 AS builder
+FROM node:24.14.1-alpine AS builder
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -15,7 +15,7 @@ COPY . .
 RUN pnpm run build
 
 # ── Stage 2: Serve ──────────────────────────────
-FROM nginx:1.28.0-alpine3.23 AS runner
+FROM nginx:stable-alpine AS runner
 
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf

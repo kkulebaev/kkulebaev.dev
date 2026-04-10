@@ -2,17 +2,21 @@
 const navLinks = [
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Stack', href: '#stack' },
+  { label: 'Labs', href: '#labs' },
   { label: 'Contact', href: '#contact' },
 ] as const
 
-const shellFacts = [
-  { label: 'Ubuntu', value: '24.04.4 LTS' },
-  { label: 'Root', value: '~/kkulebaev/console' },
-  { label: 'Role', value: 'Frontend Developer' },
-] as const
+const shellMeta = {
+  version: 'KKDEV.OS v2.4.0',
+  path: '~/kkulebaev/console',
+  status: 'terminal SSH:Active',
+} as const
 
-const projectCardAccent = ['primary', 'secondary', 'tertiary'] as const
+const sideLinks = [
+  { label: 'Root', href: '#top', glyph: '[]', active: true },
+  { label: 'Projects', href: '#projects', glyph: '>_', active: false },
+  { label: 'About', href: '#experience', glyph: '{}', active: false },
+] as const
 
 const projects = [
   {
@@ -23,15 +27,19 @@ const projects = [
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuCORFWlrlVKwe1y6j51N6N8MJb3gVPo9COO57CdQHqqlgrq5XGuZl3hBuVyCkuRQu3wYobegV3YjaqsMUb8Xm62jwHy7t1Kx4wzseDhupT5ul6nRF-9dddL3d_PDa2tRkBDoa-cMn-6PIINHXvMHgbmj79LkQwzBlbE21t_z674nyPX5MnG5cftKQE1vCwzIr-ZIF8nw0nYxJgWDd2Wg4ldHosbUxMvnJGFwfnqeH7YxOo-hQ3YjXcuDL1HhnsOwGVli8HP3qP4gCQ',
     tags: ['NEXTJS', 'TYPESCRIPT', 'TRPC'],
+    codeHref: 'https://github.com/kkulebaev',
+    demoHref: '#contact',
   },
   {
     title: 'Void_OS_CLI',
     version: 'v.3.2.0',
     description:
-      'A browser-based terminal environment for developer tools with low-latency filesystem mirroring and assistant-native commands.',
+      'Custom terminal emulator for web-based IDEs with integrated LLM support and low-latency file system mirroring.',
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuAQJbp0pB2v345SZHb-HdcKcBUEWwtezH24zwMcDPgp2KaIENDKdkcmghqGvfkE1Lj9gruUGb-JJ5cKZ95AqkgADQrVsXOXhK8hAtmPVYwXnRZSEL3rVkzeZbK7EyWvdwDs5Dx-di1WonOiUlrpFXGgEL8ntKFNdpJMaM8nAAIOUdYj1W3iSTZkt8-_cajRa8CDSF49rsdvBwTC-ZEYb_sYYx0Iy0sT822T38RjUHxtNPY4Ai9HKMh-1Xa9-dTwmLKzocsPDFkMAyI',
     tags: ['RUST', 'WEBASSEMBLY', 'XTERM'],
+    codeHref: 'https://github.com/kkulebaev',
+    demoHref: '#contact',
   },
   {
     title: 'Flux_Engine',
@@ -41,29 +49,8 @@ const projects = [
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuAZ02B9UEhWnAJCjcV7XQ5TbTi4Jbf0Fpp16DrpZ7LxC5ogUyYAaoXkqTGEQ1CVA_Fcp2NTdr4OSFrW7npQTqpxXe7Icy5nA70oWDWn5ObERuN_0dK0huOd1gLx_5WZs8LCQQWSRO3T4kJzHJx11XjnaMGr7Xl_mH7gg5Zz3Lkdnay8Duvvf0DfWuUOVW1eBuOTSxLIB0_Qc7erKh2F8sJRmKhIn7yKnZIFD_fqREiXJIZDUnGmzlBnw4B75mTvbmiBDYMuToaMMKw',
     tags: ['ZUSTAND', 'REACTIVE', 'OBSERVABLES'],
-  },
-] as const
-
-const stackGroups = [
-  {
-    title: 'CORE_LANGUAGES',
-    accent: 'primary',
-    items: [
-      ['TypeScript', '100%'],
-      ['JavaScript', '96%'],
-      ['HTML / CSS', '95%'],
-      ['Vue / Nuxt', '92%'],
-    ],
-  },
-  {
-    title: 'ARCHITECTURE',
-    accent: 'secondary',
-    items: [
-      ['Design systems', '94%'],
-      ['Component APIs', '92%'],
-      ['SSR / performance', '89%'],
-      ['Build tooling', '84%'],
-    ],
+    codeHref: 'https://github.com/kkulebaev',
+    demoHref: '#contact',
   },
 ] as const
 
@@ -85,52 +72,112 @@ const timeline = [
   },
 ] as const
 
+const stackGroups = [
+  {
+    title: 'CORE_LANGUAGES',
+    accent: 'primary',
+    items: [
+      { label: 'TypeScript', value: '100%' },
+      { label: 'React / Next.js', value: '95%' },
+      { label: 'Vue / Nuxt', value: '92%' },
+      { label: 'HTML / CSS', value: '95%' },
+    ],
+  },
+  {
+    title: 'ARCHITECTURE',
+    accent: 'secondary',
+    items: [
+      { label: 'Design Systems', value: '' },
+      { label: 'Component APIs', value: '' },
+      { label: 'SSR / Performance', value: '' },
+      { label: 'Build Tooling', value: '' },
+    ],
+  },
+  {
+    title: 'INTERFACE',
+    accent: 'tertiary',
+    items: [
+      { label: 'Tailwind CSS', value: '' },
+      { label: 'Motion Systems', value: '' },
+      { label: 'Dense Layouts', value: '' },
+      { label: 'Interaction States', value: '' },
+    ],
+  },
+  {
+    title: 'OPERATIONS',
+    accent: 'muted',
+    items: [
+      { label: 'Node.js Runtimes', value: '' },
+      { label: 'Docker / CI', value: '' },
+      { label: 'Deploy Pipelines', value: '' },
+      { label: 'Frontend QA', value: '' },
+    ],
+  },
+] as const
+
 const experiments = [
   'Terminal-inspired UI shells for portfolios and product marketing',
   'Dense data layouts with restrained animation and stronger type rhythm',
   'Frontend systems that feel editorial instead of template-driven',
 ] as const
 
+const runtimeFacts = [
+  { key: 'render.mode', value: 'single-page portfolio' },
+  { key: 'surface.logic', value: 'tonal layering' },
+  { key: 'motion.rule', value: 'fast step feedback' },
+  { key: 'accent.use', value: 'cyan / lime / sparse' },
+] as const
+
+const connectionFacts = [
+  { key: 'IP', value: '95.216.201.91' },
+  { key: 'LOC', value: 'UTC / Remote' },
+  { key: 'PORT', value: '443' },
+] as const
+
 const contactRows = [
-  { key: 'email', value: 'konstantinkulebaev@gmail.com', href: 'mailto:konstantinkulebaev@gmail.com' },
-  { key: 'github', value: 'github.com/kkulebaev', href: 'https://github.com/kkulebaev' },
-  { key: 'linkedin', value: 'linkedin.com/in/kkulebaev', href: 'https://linkedin.com/in/kkulebaev' },
+  { key: 'email_address', value: 'konstantinkulebaev@gmail.com', href: 'mailto:konstantinkulebaev@gmail.com' },
+  { key: 'github_handle', value: 'github.com/kkulebaev', href: 'https://github.com/kkulebaev' },
+  { key: 'linkedin_id', value: 'linkedin.com/in/kkulebaev', href: 'https://linkedin.com/in/kkulebaev' },
+  { key: 'telegram', value: '@kkulebaev', href: 'https://t.me/kkulebaev' },
+] as const
+
+const systemFooter = [
+  { label: 'SYS_READY', value: '0.0.0.0:443' },
+  { label: 'branch', value: 'main' },
+  { label: 'utf-8', value: 'enabled' },
+  { label: 'stack', value: 'typescript' },
+  { label: 'latency', value: '12ms' },
 ] as const
 </script>
 
 <template>
-  <div class="shell">
+  <div id="top" class="shell">
     <header class="topbar">
-      <div class="topbar__path">~/kkulebaev/console</div>
+      <div class="topbar__path">{{ shellMeta.path }}</div>
 
       <nav class="topbar__nav">
         <a v-for="link in navLinks" :key="link.href" :href="link.href">{{ link.label }}</a>
       </nav>
 
-      <div class="topbar__status">
-        <span class="topbar__status-icon">&gt;_</span>
-        <span>SSH:Active</span>
-      </div>
+      <div class="topbar__status">{{ shellMeta.status }}</div>
     </header>
 
     <aside class="siderail">
       <div class="siderail__meta">
-        <span class="siderail__meta-label">{{ shellFacts[0].label }}</span>
-        <span class="siderail__meta-value">{{ shellFacts[0].value }}</span>
+        <span class="siderail__meta-label">{{ shellMeta.version }}</span>
+        <span class="siderail__meta-value">{{ shellMeta.path }}</span>
       </div>
 
       <div class="siderail__stack">
-        <a class="siderail__item siderail__item--active" href="#">
-          <span class="siderail__glyph">[]</span>
-          <span>Root</span>
-        </a>
-        <a class="siderail__item" href="#projects">
-          <span class="siderail__glyph">&gt;_</span>
-          <span>Projects</span>
-        </a>
-        <a class="siderail__item" href="#experience">
-          <span class="siderail__glyph">{}</span>
-          <span>About</span>
+        <a
+          v-for="item in sideLinks"
+          :key="item.label"
+          class="siderail__item"
+          :class="{ 'siderail__item--active': item.active }"
+          :href="item.href"
+        >
+          <span class="siderail__glyph">{{ item.glyph }}</span>
+          <span>{{ item.label }}</span>
         </a>
       </div>
 
@@ -157,7 +204,7 @@ const contactRows = [
             </a>
             <div class="availability">
               <span class="availability__dot"></span>
-              <span>Available for hire</span>
+              <span>Available for freelance projects</span>
             </div>
           </div>
         </div>
@@ -173,12 +220,7 @@ const contactRows = [
         </div>
 
         <div class="project-grid">
-          <article
-            v-for="(project, index) in projects"
-            :key="project.title"
-            class="project-card"
-            :class="`project-card--${projectCardAccent[index]}`"
-          >
+          <article v-for="project in projects" :key="project.title" class="project-card">
             <div class="project-card__bar">
               <div class="window-dots window-dots--ghost">
                 <span></span>
@@ -201,44 +243,13 @@ const contactRows = [
               </div>
 
               <div class="project-card__actions">
-                <a class="button button--primary" href="https://github.com/kkulebaev" target="_blank" rel="noreferrer">
+                <a class="button button--primary" :href="project.codeHref" target="_blank" rel="noreferrer">
                   VIEW_CODE
                 </a>
-                <a class="button button--panel" href="#contact">LIVE_DEMO</a>
+                <a class="button button--panel" :href="project.demoHref">LIVE_DEMO</a>
               </div>
             </div>
           </article>
-        </div>
-      </section>
-
-      <section id="stack" class="section section--band">
-        <div class="stack-layout">
-          <div class="stack-layout__intro">
-            <p class="eyebrow eyebrow--secondary">&gt; _stack_analysis</p>
-            <h2>Expertise.<br />Inventory</h2>
-            <p>
-              A systematic breakdown of the tools, patterns, and frontend decisions behind
-              interfaces that need both technical rigor and stronger editorial presence.
-            </p>
-          </div>
-
-          <div class="stack-layout__groups">
-            <article
-              v-for="group in stackGroups"
-              :key="group.title"
-              class="stack-group"
-              :class="`stack-group--${group.accent}`"
-            >
-              <h3>{{ group.title }}</h3>
-              <ul>
-                <li v-for="[label, value] in group.items" :key="label">
-                  <span class="stack-group__lead">&gt;&gt;</span>
-                  <span>{{ label }}</span>
-                  <strong>{{ value }}</strong>
-                </li>
-              </ul>
-            </article>
-          </div>
         </div>
       </section>
 
@@ -280,10 +291,10 @@ const contactRows = [
               <div class="terminal-window__section terminal-window__section--muted">
                 <p class="eyebrow">runtime</p>
                 <div class="runtime-grid">
-                  <span>render.mode <strong>single-page portfolio</strong></span>
-                  <span>surface.logic <strong>tonal layering</strong></span>
-                  <span>motion.rule <strong>fast step feedback</strong></span>
-                  <span>accent.use <strong>cyan / lime / sparse</strong></span>
+                  <span v-for="fact in runtimeFacts" :key="fact.key">
+                    {{ fact.key }}
+                    <strong>{{ fact.value }}</strong>
+                  </span>
                 </div>
               </div>
             </div>
@@ -291,48 +302,85 @@ const contactRows = [
         </div>
       </section>
 
-      <section id="contact" class="section">
-        <div class="contact-panel">
-          <div class="contact-panel__copy">
-            <p class="eyebrow">&gt; _contact</p>
-            <h2>Ready to build something cleaner and sharper?</h2>
+      <section id="labs" class="section section--band">
+        <div class="stack-layout">
+          <div class="stack-layout__intro">
+            <p class="eyebrow eyebrow--secondary">&gt; _stack_analysis</p>
+            <h2>Expertise.<br />Inventory</h2>
             <p>
-              I work best on products that care about interface quality, system clarity, and the
-              details that make technical work feel premium instead of generic.
+              A systematic breakdown of tools and technologies utilized in the construction of
+              modular digital experiences.
             </p>
-
-            <div class="contact-panel__meta">direct / responsive / async-friendly</div>
-
-            <div class="contact-panel__actions">
-              <a class="button button--primary" href="mailto:konstantinkulebaev@gmail.com">START_CHAT</a>
-              <a class="button button--ghost" href="https://github.com/kkulebaev" target="_blank" rel="noreferrer">
-                <span>&gt;</span> SOURCE
-              </a>
-            </div>
           </div>
 
-          <div class="contact-terminal">
-            <div class="contact-terminal__line">contact_protocols.sh</div>
-            <div class="contact-terminal__line contact-terminal__line--muted">
-              status_monitor:
-              <span class="contact-terminal__online">ONLINE</span>
-            </div>
-            <div class="contact-terminal__list">
-              <a
-                v-for="row in contactRows"
-                :key="row.key"
-                :href="row.href"
-                target="_blank"
-                rel="noreferrer"
-                class="contact-terminal__row"
-              >
-                <span>{{ row.key }}</span>
-                <strong>{{ row.value }}</strong>
-              </a>
-            </div>
+          <div class="stack-layout__groups">
+            <article
+              v-for="group in stackGroups"
+              :key="group.title"
+              class="stack-group"
+              :class="`stack-group--${group.accent}`"
+            >
+              <h3>{{ group.title }}</h3>
+              <ul>
+                <li v-for="item in group.items" :key="item.label">
+                  <span class="stack-group__lead">&gt;&gt;</span>
+                  <span>{{ item.label }}</span>
+                  <strong v-if="item.value">{{ item.value }}</strong>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--contact">
+        <div class="section__heading section__heading--center">
+          <p class="eyebrow eyebrow--secondary">Initialize Connection</p>
+          <h2>Ready to architect the next standard?</h2>
+        </div>
+
+        <div class="contact-cta">
+          <div class="contact-cta__actions">
+            <a class="button button--primary" href="mailto:konstantinkulebaev@gmail.com">START_CHAT</a>
+            <a class="button button--panel" href="https://github.com/kkulebaev" target="_blank" rel="noreferrer">
+              DOWNLOAD_CV
+            </a>
+          </div>
+
+          <div class="contact-cta__facts">
+            <span v-for="fact in connectionFacts" :key="fact.key">{{ fact.key }}: {{ fact.value }}</span>
+          </div>
+        </div>
+
+        <div class="contact-terminal">
+          <div class="contact-terminal__heading">
+            <span class="contact-terminal__line">contact_protocols.sh</span>
+            <span class="contact-terminal__line contact-terminal__line--muted">
+              &gt; status_monitor: <span class="contact-terminal__online">ONLINE</span>
+            </span>
+          </div>
+
+          <div class="contact-terminal__list">
+            <a
+              v-for="row in contactRows"
+              :key="row.key"
+              :href="row.href"
+              target="_blank"
+              rel="noreferrer"
+              class="contact-terminal__row"
+            >
+              <span>{{ row.key }}</span>
+              <strong>{{ row.value }}</strong>
+            </a>
           </div>
         </div>
       </section>
     </main>
+
+    <footer class="sysbar">
+      <span v-for="item in systemFooter" :key="item.label">
+        {{ item.label }}: <strong>{{ item.value }}</strong>
+      </span>
+    </footer>
   </div>
 </template>

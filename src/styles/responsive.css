@@ -7,6 +7,10 @@
     margin-left: 0;
   }
 
+  .sysbar {
+    padding-left: 1rem;
+  }
+
   .hero {
     min-height: auto;
     padding-top: 3rem;
@@ -67,5 +71,13 @@
 
   .timeline__item {
     grid-template-columns: 1fr;
+  }
+
+  .contact-cta__actions {
+    width: 100%;
+  }
+
+  .contact-cta__actions .button {
+    flex: 1;
   }
 }

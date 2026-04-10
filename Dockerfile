@@ -14,12 +14,13 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm run build
 
-# ── Stage 2: Serve ──────────────────────────────
-FROM nginx:stable-alpine AS runner
+# ── Stage 2: Serve (Railway) ─────────────────────
+# https://docs.railway.com/guides/vue#use-a-dockerfile
+FROM caddy:2-alpine AS runner
 
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+WORKDIR /srv
 
-EXPOSE 80
+COPY --from=builder /app/dist ./dist
+COPY Caddyfile /etc/caddy/Caddyfile
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]

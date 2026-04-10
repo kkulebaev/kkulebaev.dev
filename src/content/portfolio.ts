@@ -1,3 +1,9 @@
+/* ═══════════════════════════════════════════════
+   Portfolio Content — types & data
+   ═══════════════════════════════════════════════ */
+
+// ── Types ──
+
 export type NavLink = {
   label: string
   href: `#${string}`
@@ -16,22 +22,6 @@ export type SideLink = {
   active: boolean
 }
 
-export type Project = {
-  title: string
-  version: string
-  description: string
-  image: string
-  tags: readonly string[]
-  codeHref: string
-  demoHref: `#${string}`
-}
-
-export type TimelineEntry = {
-  year: string
-  title: string
-  text: string
-}
-
 export type StackAccent = 'primary' | 'secondary' | 'tertiary' | 'muted'
 
 export type StackItem = {
@@ -45,6 +35,18 @@ export type StackGroup = {
   items: readonly StackItem[]
 }
 
+export type Project = {
+  title: string
+  version: string
+  description: string
+  image: string
+  tags: readonly string[]
+  codeHref: string
+  demoHref: string
+}
+
+export type ProjectCardAccent = 'primary' | 'secondary' | 'tertiary'
+
 export type KVPair = {
   key: string
   value: string
@@ -54,7 +56,7 @@ export type ContactRow = {
   key: string
   value: string
   href: string
-  accent?: 'primary' | 'secondary' | 'tertiary'
+  accent: 'primary' | 'secondary' | 'tertiary'
 }
 
 export type SysbarItem = {
@@ -63,26 +65,36 @@ export type SysbarItem = {
   accent?: 'lime' | 'white'
 }
 
-export const navLinks = [
+// ── Shell ──
+
+export const shellMeta: ShellMeta = {
+  version: 'Ubuntu 24.04.4 LTS',
+  path: '~/kkulebaev/console',
+  status: 'SSH:Active',
+}
+
+export const navLinks: readonly NavLink[] = [
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
   { label: 'Labs', href: '#labs' },
   { label: 'Contact', href: '#contact' },
-] satisfies readonly NavLink[]
+]
 
-export const shellMeta = {
-  version: 'Ubuntu 24.04.4 LTS',
-  path: '~/kkulebaev/console',
-  status: 'SSH:Active',
-} satisfies ShellMeta
-
-export const sideLinks = [
+export const sideLinks: readonly SideLink[] = [
   { label: 'Root', href: '#top', glyph: 'folder', active: true },
   { label: 'Projects', href: '#projects', glyph: 'terminal', active: false },
   { label: 'About', href: '#experience', glyph: 'person', active: false },
-] satisfies readonly SideLink[]
+]
 
-export const projects = [
+// ── Projects ──
+
+export const projectCardAccents: readonly ProjectCardAccent[] = [
+  'primary',
+  'secondary',
+  'tertiary',
+]
+
+export const projects: readonly Project[] = [
   {
     title: 'Krypton_Vault',
     version: 'v.1.0.4',
@@ -116,31 +128,11 @@ export const projects = [
     codeHref: 'https://github.com/archon-dev',
     demoHref: '#contact',
   },
-] satisfies readonly Project[]
+]
 
-export type ProjectCardAccent = 'primary' | 'secondary' | 'tertiary'
+// ── Stack / Labs ──
 
-export const projectCardAccents: readonly ProjectCardAccent[] = ['primary', 'secondary', 'tertiary']
-
-export const timeline = [
-  {
-    year: '2026',
-    title: 'Independent frontend systems work',
-    text: 'Shipping portfolio, product, and dashboard interfaces that need strong structure and a sharper visual point of view.',
-  },
-  {
-    year: '2025',
-    title: 'Design-to-code acceleration',
-    text: 'Focused on turning product mockups into maintainable Vue and React frontends with cleaner tokens, motion, and content hierarchy.',
-  },
-  {
-    year: '2024',
-    title: 'Platform and tooling depth',
-    text: 'Expanded into component architecture, deployment pipelines, and the operational details needed to keep rich interfaces reliable.',
-  },
-] satisfies readonly TimelineEntry[]
-
-export const stackGroups = [
+export const stackGroups: readonly StackGroup[] = [
   {
     title: 'CORE_LANGUAGES',
     accent: 'primary',
@@ -176,28 +168,17 @@ export const stackGroups = [
       { label: 'Node.js Runtimes' },
     ],
   },
-] satisfies readonly StackGroup[]
+]
 
-export const experiments = [
-  'Terminal-inspired UI shells for portfolios and product marketing',
-  'Dense data layouts with restrained animation and stronger type rhythm',
-  'Frontend systems that feel editorial instead of template-driven',
-] satisfies readonly string[]
+// ── Contact ──
 
-export const runtimeFacts = [
-  { key: 'render.mode', value: 'single-page portfolio' },
-  { key: 'surface.logic', value: 'tonal layering' },
-  { key: 'motion.rule', value: 'fast step feedback' },
-  { key: 'accent.use', value: 'cyan / lime / sparse' },
-] satisfies readonly KVPair[]
-
-export const connectionFacts = [
+export const connectionFacts: readonly KVPair[] = [
   { key: 'IP', value: '192.168.1.101' },
   { key: 'LOC', value: 'SAN_FRANCISCO, CA' },
   { key: 'PORT', value: '3000' },
-] satisfies readonly KVPair[]
+]
 
-export const contactRows = [
+export const contactRows: readonly ContactRow[] = [
   {
     key: 'email_address',
     value: 'konstantinkulebaev@gmail.com',
@@ -222,12 +203,14 @@ export const contactRows = [
     href: 'https://x.com/kkulebaev',
     accent: 'primary',
   },
-] satisfies readonly ContactRow[]
+]
 
-export const systemFooter = [
+// ── Sysbar ──
+
+export const systemFooter: readonly SysbarItem[] = [
   { label: 'SYS_READY', value: '0.0.0.0:3000', accent: 'lime' },
   { label: 'BRANCH', value: 'MAIN' },
   { label: 'UTF-8', value: '' },
   { label: 'TYPESCRIPT', value: '' },
   { label: 'LATENCY', value: '12ms', accent: 'white' },
-] satisfies readonly SysbarItem[]
+]

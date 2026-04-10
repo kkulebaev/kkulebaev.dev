@@ -65,7 +65,7 @@ defineProps<Props>()
                 target="_blank"
                 rel="noreferrer"
                 class="contact-grid__item"
-                :class="row.accent ? `contact-grid__item--${row.accent}` : ''"
+                :class="`contact-grid__item--${row.accent}`"
               >
                 <span class="contact-grid__key">{{ row.key }}</span>
                 <strong class="contact-grid__value">{{ row.value }}</strong>

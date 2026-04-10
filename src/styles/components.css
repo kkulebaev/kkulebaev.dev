@@ -1,21 +1,26 @@
+/* ═══════════════════════════════════════════════
+   Components — Button, terminal window, dots
+   ═══════════════════════════════════════════════ */
+
+/* ── Button ── */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   min-height: 2.35rem;
-  padding: 0 0.85rem;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.625rem;
+  padding: 0 var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
   transition:
-    background-color 0.2s,
-    color 0.2s,
-    transform 0.2s;
+    background-color var(--duration-normal),
+    color var(--duration-normal),
+    transform var(--duration-normal);
 }
 
 .button:hover {
@@ -23,95 +28,81 @@
 }
 
 .button--primary {
-  background: var(--cyan);
-  color: #00626e;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
 }
 
 .button--primary:hover {
-  background: var(--cyan-soft);
-}
-
-.button--ghost {
-  background: rgba(42, 42, 42, 0.5);
-  color: var(--text);
-  box-shadow: inset 0 0 0 1px rgba(132, 147, 150, 0.12);
+  background: var(--color-primary);
 }
 
 .button--panel {
   background: transparent;
-  color: var(--text);
-  border: 1px solid rgba(59, 73, 76, 0.3);
+  color: var(--color-on-surface);
+  border: var(--border-strong);
 }
 
 .button--panel:hover {
-  background: var(--surface-bright);
+  background: var(--color-surface-bright);
 }
 
 .button__icon {
-  font-size: 0.875rem;
+  font-size: var(--text-md);
   vertical-align: middle;
 }
 
 /* ── Terminal Window ── */
 .terminal-window {
-  background: var(--surface-lowest);
+  background: var(--color-surface-lowest);
 }
 
 .terminal-window__bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  min-height: 2rem;
-  padding: 0 1rem;
-  background: var(--surface-high);
+  gap: var(--space-4);
+  min-height: var(--space-8);
+  padding: 0 var(--space-4);
+  background: var(--color-surface-high);
 }
 
 .terminal-window__title {
-  color: rgba(229, 226, 225, 0.4);
-  font-family: 'Space Mono', monospace;
-  font-size: 0.625rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.window-dots {
-  display: inline-flex;
-  gap: 0.5rem;
-}
-
-.window-dots span {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 999px;
-  background: rgba(59, 73, 76, 0.4);
-}
-
-.window-dots--ghost span {
-  background: rgba(59, 73, 76, 0.4);
-}
-
-.window-dot--red {
-  background: #ff5f56 !important;
-}
-
-.window-dot--yellow {
-  background: #ffbd2e !important;
-}
-
-.window-dot--green {
-  background: #27c93f !important;
+  color: rgba(229, 226, 225, 0.4);
 }
 
 .terminal-window__body {
   display: grid;
-  gap: 1.5rem;
-  padding: 2rem;
-  font-family: 'Space Mono', monospace;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  font-family: var(--font-mono);
 }
 
+/* ── Window Dots ── */
+.window-dots {
+  display: inline-flex;
+  gap: var(--space-2);
+}
+
+.window-dots span {
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-full);
+  background: rgba(59, 73, 76, 0.4);
+}
+
+.window-dot--red    { background: #ff5f56 !important; }
+.window-dot--yellow { background: #ffbd2e !important; }
+.window-dot--green  { background: #27c93f !important; }
+
+/* ── Keyframes ── */
 @keyframes pulse {
-  50% {
-    opacity: 0.35;
-  }
+  50% { opacity: 0.35; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }

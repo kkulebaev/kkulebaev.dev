@@ -1,7 +1,13 @@
+/* ═══════════════════════════════════════════════
+   Base — Reset, typography, global primitives
+   ═══════════════════════════════════════════════ */
+
+/* ── Reset ── */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
@@ -9,11 +15,10 @@ html {
 }
 
 body {
-  margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #131313;
-  color: var(--text);
+  background: var(--color-surface-dim);
+  color: var(--color-on-surface);
 }
 
 a {
@@ -23,7 +28,7 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--color-primary-container);
   outline-offset: 3px;
 }
 
@@ -43,68 +48,46 @@ select {
   min-height: 100vh;
 }
 
-/* Selection */
 ::selection {
-  background: var(--cyan);
-  color: #00626e;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
 }
 
-/* Heading typography */
-.hero h1,
-.section h2,
-.project-card h3 {
+/* ── Heading typography ── */
+h1, h2, h3 {
   margin: 0;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-headline);
   font-weight: 700;
   letter-spacing: -0.05em;
 }
 
-/* Mono font assignments */
-.topbar__path,
-.topbar__status,
-.eyebrow,
-.button,
-.section__meta,
-.project-card__bar,
-.project-card__tags,
-.sysbar {
-  font-family: 'Space Mono', monospace;
-}
-
-/* Body text defaults */
-.hero__lede,
-.stack-layout__intro p,
-.project-card p {
-  margin: 0;
-}
-
-/* Eyebrow */
+/* ── Eyebrow (reusable label) ── */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  margin: 0 0 1rem;
-  color: var(--cyan);
-  font-family: 'Space Mono', monospace;
-  font-size: 0.75rem;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
   letter-spacing: 0.3em;
   text-transform: uppercase;
+  color: var(--color-primary-container);
 }
 
 .eyebrow--secondary {
-  color: var(--violet);
+  color: var(--color-secondary);
 }
 
 .eyebrow__mark {
-  color: var(--violet);
+  color: var(--color-secondary);
 }
 
-/* Material Symbols */
+/* ── Material Symbols ── */
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: var(--text-xl);
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;

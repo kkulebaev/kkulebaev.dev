@@ -1,33 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap');
 
+/* ═══════════════════════════════════════════════
+   Design Tokens — MD3 Terminal Portfolio
+   ═══════════════════════════════════════════════ */
+
 :root {
-  font-family: 'Inter', system-ui, sans-serif;
-  color: #e5e2e1;
-  background: #131313;
+  /* ── Breakpoints (reference only, used in media queries) ──
+   * --bp-sm:  640px
+   * --bp-md:  768px
+   * --bp-lg: 1024px
+   */
+
+  /* ── Color: Accents ── */
+  --color-primary:              #c3f5ff;  /* MD3 primary */
+  --color-primary-container:    #00e5ff;  /* MD3 primary-container — main accent */
+  --color-on-primary:           #00363d;
+  --color-on-primary-container: #00626e;
+  --color-secondary:            #f8acff;  /* MD3 secondary — violet */
+  --color-tertiary:             #cbff3c;  /* MD3 tertiary  — lime   */
+  --color-error:                #ffb4ab;
+
+  /* ── Color: Surfaces (dark → light) ── */
+  --color-surface-lowest:  #0e0e0e;
+  --color-surface-dim:     #131313;  /* = background */
+  --color-surface-low:     #1c1b1b;
+  --color-surface:         #201f1f;
+  --color-surface-high:    #2a2a2a;
+  --color-surface-highest: #353534;
+  --color-surface-bright:  #393939;
+
+  /* ── Color: On-surface / Outline ── */
+  --color-on-surface:         #e5e2e1;
+  --color-on-surface-variant:  #bac9cc;
+  --color-outline:             #849396;
+  --color-outline-variant:     #3b494c;
+
+  /* ── Color: Semantic borders (pre-composed) ── */
+  --border-subtle:  1px solid rgba(59, 73, 76, 0.10);
+  --border-default: 1px solid rgba(59, 73, 76, 0.20);
+  --border-strong:  1px solid rgba(59, 73, 76, 0.30);
+
+  /* ── Font families ── */
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body:     'Inter', system-ui, sans-serif;
+  --font-mono:     'Space Mono', monospace;
+
+  /* ── Type scale ── */
+  --text-2xs:  0.5rem;     /*  8px */
+  --text-xs:   0.5625rem;  /*  9px */
+  --text-sm:   0.625rem;   /* 10px */
+  --text-base: 0.75rem;    /* 12px */
+  --text-md:   0.875rem;   /* 14px */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.25rem;    /* 20px */
+
+  --display-sm: clamp(2.25rem, 5vw, 3rem);
+  --display-md: clamp(2.75rem, 6vw, 3.5rem);
+  --display-lg: clamp(3.75rem, 9vw, 6rem);
+
+  /* ── Spacing (4px grid) ── */
+  --space-0:   0;
+  --space-0_5: 0.125rem;  /*  2px */
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+  --space-32:  8rem;      /* 128px */
+
+  /* ── Motion ── */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast:   0.15s;
+  --duration-normal: 0.2s;
+  --duration-slow:   0.3s;
+
+  /* ── Radius ── */
+  --radius-none: 0;
+  --radius-full: 9999px;
+
+  /* ── Elevation ── */
+  --shadow-sm: 0 1px 0 rgba(132, 147, 150, 0.06);
+  --shadow-lg: 0 40px 80px rgba(0, 0, 0, 0.5);
+
+  /* ── Layout sizing ── */
+  --topbar-h:   3.5rem;
+  --siderail-w: 5rem;
+  --sysbar-h:   1.75rem;
+  --content-max: 76rem;
+
+  /* ── Root defaults ── */
+  font-family: var(--font-body);
+  color: var(--color-on-surface);
+  background: var(--color-surface-dim);
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --bg: #131313;
-  --surface-lowest: #0e0e0e;
-  --surface-low: #1c1b1b;
-  --surface: #201f1f;
-  --surface-high: #2a2a2a;
-  --surface-highest: #353534;
-  --surface-bright: #393939;
-  --text: #e5e2e1;
-  --text-muted: #bac9cc;
-  --outline: rgba(132, 147, 150, 0.15);
-  --ghost-border: inset 0 0 0 1px rgba(132, 147, 150, 0.12);
-  --cyan: #00e5ff;
-  --cyan-soft: #c3f5ff;
-  --lime: #cbff3c;
-  --violet: #f8acff;
-  --shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
-
-  /* Layout sizing */
-  --page-top: 5.5rem;
-  --sysbar-h: 2.25rem;
 }

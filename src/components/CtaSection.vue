@@ -17,7 +17,7 @@ defineProps<Props>()
 
     <div class="contact-cta">
       <div class="contact-cta__actions">
-        <a class="button button--primary" href="mailto:konstantinkulebaev@gmail.com">
+        <a class="button button--primary" href="https://t.me/kkulebaev" target="_blank" rel="noreferrer">
           START_CHAT <span class="material-symbols-outlined button__icon">send</span>
         </a>
         <a class="button button--panel" href="https://github.com/kkulebaev" target="_blank" rel="noreferrer">DOWNLOAD_CV</a>

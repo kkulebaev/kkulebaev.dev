@@ -35,15 +35,27 @@
 
 @media (max-width: 760px) {
   .topbar {
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0.85rem 1.1rem;
   }
 
   .topbar__nav {
-    order: 3;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
     gap: 1rem;
     overflow-x: auto;
+  }
+
+  .topbar__path {
+    white-space: nowrap;
+  }
+
+  .topbar__status {
+    white-space: nowrap;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.66rem;
   }
 
   .hero,

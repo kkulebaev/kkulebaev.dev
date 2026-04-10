@@ -166,7 +166,7 @@
 
 .page {
   margin-left: 5.5rem;
-  padding-top: 5.5rem;
+  padding-top: var(--page-top);
   padding-bottom: 7.25rem;
 }
 
@@ -239,7 +239,8 @@
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 0.4rem 1rem;
+  min-height: var(--sysbar-h);
+  padding: 0.35rem 1rem;
   padding-left: calc(1rem + 5.5rem);
   background: rgba(14, 14, 14, 0.92);
   backdrop-filter: blur(14px);

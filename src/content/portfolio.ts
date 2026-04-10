@@ -185,10 +185,16 @@ export const connectionFacts: readonly KVPair[] = [
 
 export const contactRows: readonly ContactRow[] = [
   {
+    key: 'telegram',
+    value: 't.me/kkulebaev',
+    href: 'https://t.me/kkulebaev',
+    accent: 'primary',
+  },
+  {
     key: 'email',
     value: 'konstantinkulebaev@gmail.com',
     href: 'mailto:konstantinkulebaev@gmail.com',
-    accent: 'primary',
+    accent: 'tertiary',
   },
   {
     key: 'github',
@@ -207,6 +213,12 @@ export const contactRows: readonly ContactRow[] = [
     value: '@kkulebaev',
     href: 'https://x.com/kkulebaev',
     accent: 'primary',
+  },
+  {
+    key: 'threads',
+    value: '@konstantin_kulebaev',
+    href: 'https://threads.com/@konstantin_kulebaev',
+    accent: 'tertiary',
   },
 ]
 

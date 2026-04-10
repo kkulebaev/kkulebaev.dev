@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-ssr
+*.local
+.git
+.gitignore
+.idea
+.vscode
+*.log
+screenshots/
+tmp/
+

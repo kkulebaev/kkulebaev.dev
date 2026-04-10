@@ -65,6 +65,10 @@ export type SysbarItem = {
   accent?: 'lime' | 'white'
 }
 
+// ── Availability ──
+
+export const availableForHire = false
+
 // ── Shell ──
 
 export const shellMeta: ShellMeta = {

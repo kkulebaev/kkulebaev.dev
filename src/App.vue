@@ -8,6 +8,7 @@ import ProjectsSection from './components/ProjectsSection.vue'
 import Sysbar from './components/Sysbar.vue'
 
 import {
+  availableForHire,
   connectionFacts,
   contactRows,
   navLinks,
@@ -26,7 +27,7 @@ import {
     <AppSiderail :meta="shellMeta" :links="sideLinks" />
 
     <main class="page">
-      <HeroSection />
+      <HeroSection :available="availableForHire" />
       <ProjectsSection :projects="projects" :accents="projectCardAccents" />
       <div id="experience" class="anchor" aria-hidden="true"></div>
       <LabsSection :groups="stackGroups" />

@@ -120,6 +120,10 @@
   animation: pulse 1.3s step-end infinite;
 }
 
+.availability--unavailable .availability__dot {
+  background: var(--color-error);
+}
+
 /* ── Projects ── */
 .project-grid {
   display: grid;

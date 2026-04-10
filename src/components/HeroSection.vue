@@ -22,11 +22,17 @@
           <span>CONTACT</span>
           <span class="material-symbols-outlined hero-link__icon">mail</span>
         </a>
-        <div class="availability">
+        <div class="availability" :class="{ 'availability--unavailable': !available }">
           <span class="availability__dot"></span>
-          <span>Available for hire</span>
+          <span>{{ available ? 'Available for hire' : 'Unavailable for hire' }}</span>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+defineProps<{
+  available: boolean
+}>()
+</script>

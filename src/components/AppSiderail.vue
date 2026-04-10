@@ -28,7 +28,7 @@ const osVersion = computed(() => props.meta.version.split(' ').slice(1).join(' '
         :class="{ 'siderail__item--active': item.active }"
         :href="item.href"
       >
-        <span class="siderail__glyph">{{ item.glyph }}</span>
+        <span class="material-symbols-outlined siderail__glyph">{{ item.glyph }}</span>
         <span>{{ item.label }}</span>
       </a>
     </div>

@@ -5,14 +5,17 @@
   gap: 0.5rem;
   min-height: 2.35rem;
   padding: 0 0.85rem;
-  font-size: 0.62rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.625rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
   transition:
-    background-color 0.2s cubic-bezier(0.2, 0, 0, 1),
-    color 0.2s cubic-bezier(0.2, 0, 0, 1),
-    transform 0.2s steps(2, end);
+    background-color 0.2s,
+    color 0.2s,
+    transform 0.2s;
 }
 
 .button:hover {
@@ -21,7 +24,7 @@
 
 .button--primary {
   background: var(--cyan);
-  color: #00363d;
+  color: #00626e;
 }
 
 .button--primary:hover {
@@ -34,54 +37,24 @@
   box-shadow: inset 0 0 0 1px rgba(132, 147, 150, 0.12);
 }
 
-.button--ghost:hover {
-  box-shadow:
-    inset 0 0 0 1px rgba(0, 229, 255, 0.2),
-    0 18px 36px rgba(0, 0, 0, 0.24);
-}
-
-.button--secondary:hover {
-  border-bottom-color: var(--violet);
-}
-
 .button--panel {
   background: transparent;
   color: var(--text);
-  box-shadow: inset 0 0 0 1px rgba(59, 73, 76, 0.3);
+  border: 1px solid rgba(59, 73, 76, 0.3);
 }
 
 .button--panel:hover {
   background: var(--surface-bright);
 }
 
-.availability {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.15rem 0.1rem;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(229, 226, 225, 0.72);
+.button__icon {
+  font-size: 0.875rem;
+  vertical-align: middle;
 }
 
-.availability__dot {
-  width: 0.55rem;
-  height: 0.55rem;
-  background: var(--lime);
-  border-radius: 999px;
-  box-shadow: 0 0 12px rgba(203, 255, 60, 0.4);
-  animation: pulse 1.3s step-end infinite;
-}
-
+/* ── Terminal Window ── */
 .terminal-window {
-  width: min(100%, 29rem);
-  background: linear-gradient(180deg, rgba(32, 31, 31, 0.82), rgba(28, 27, 27, 0.94));
-  box-shadow:
-    var(--ghost-border),
-    var(--shadow);
-  backdrop-filter: blur(20px);
+  background: var(--surface-lowest);
 }
 
 .terminal-window__bar {
@@ -89,96 +62,52 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 3rem;
+  min-height: 2rem;
   padding: 0 1rem;
   background: var(--surface-high);
 }
 
 .terminal-window__title {
-  color: rgba(229, 226, 225, 0.5);
+  color: rgba(229, 226, 225, 0.4);
   font-family: 'Space Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .window-dots {
   display: inline-flex;
-  gap: 0.35rem;
+  gap: 0.5rem;
 }
 
 .window-dots span {
-  width: 0.45rem;
-  height: 0.45rem;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 999px;
-  background: rgba(132, 147, 150, 0.4);
+  background: rgba(59, 73, 76, 0.4);
 }
 
 .window-dots--ghost span {
-  background: rgba(132, 147, 150, 0.28);
+  background: rgba(59, 73, 76, 0.4);
+}
+
+.window-dot--red {
+  background: #ff5f56 !important;
+}
+
+.window-dot--yellow {
+  background: #ffbd2e !important;
+}
+
+.window-dot--green {
+  background: #27c93f !important;
 }
 
 .terminal-window__body {
   display: grid;
-  gap: 1rem;
-  padding: 1rem;
-  background: rgba(32, 31, 31, 0.92);
-}
-
-.terminal-window__section {
-  display: grid;
-  gap: 0.75rem;
-  padding: 1rem;
-  background: rgba(42, 42, 42, 0.9);
-  box-shadow: var(--ghost-border);
-}
-
-.terminal-window__section--muted {
-  background: rgba(28, 27, 27, 0.96);
-}
-
-.signal-row,
-.command-list span,
-.runtime-grid span,
-.contact-terminal__row {
-  display: grid;
-  gap: 0.3rem;
-}
-
-.signal-row {
-  padding: 0.55rem 0;
-}
-
-.signal-row span,
-.command-list em,
-.section__meta,
-.project-card__bar,
-.stack-group h3,
-.timeline__year,
-.contact-terminal__line {
-  color: rgba(229, 226, 225, 0.44);
-  font-size: 0.68rem;
-  font-style: normal;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.signal-row strong,
-.command-list strong,
-.runtime-grid strong,
-.contact-terminal__row strong {
-  color: var(--text);
-  font-size: 0.92rem;
-  font-weight: 400;
-}
-
-.command-list {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.terminal-window--tall {
-  width: 100%;
+  gap: 1.5rem;
+  padding: 2rem;
+  font-family: 'Space Mono', monospace;
 }
 
 @keyframes pulse {

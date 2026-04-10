@@ -18,10 +18,12 @@ defineProps<Props>()
       <a v-for="link in links" :key="link.href" :href="link.href">{{ link.label }}</a>
     </nav>
 
-    <div class="topbar__status">
-      <span class="topbar__status-icon" aria-hidden="true">&gt;_</span>
-      <span>{{ status }}</span>
+    <div class="topbar__right">
+      <div class="topbar__status">
+        <span class="material-symbols-outlined topbar__status-icon" aria-hidden="true">terminal</span>
+        <span>{{ status }}</span>
+      </div>
+      <span class="material-symbols-outlined topbar__control" aria-hidden="true">code</span>
     </div>
-    <span class="topbar__control" aria-hidden="true">&lt;/&gt;</span>
   </header>
 </template>

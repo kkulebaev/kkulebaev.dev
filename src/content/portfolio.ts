@@ -54,11 +54,13 @@ export type ContactRow = {
   key: string
   value: string
   href: string
+  accent?: 'primary' | 'secondary' | 'tertiary'
 }
 
 export type SysbarItem = {
   label: string
   value: string
+  accent?: 'lime' | 'white'
 }
 
 export const navLinks = [
@@ -69,15 +71,15 @@ export const navLinks = [
 ] satisfies readonly NavLink[]
 
 export const shellMeta = {
-  version: 'ARCHON.OS v2.4.0',
-  path: '~/archon/console',
+  version: 'Ubuntu 24.04.4 LTS',
+  path: '~/kkulebaev/console',
   status: 'SSH:Active',
 } satisfies ShellMeta
 
 export const sideLinks = [
-  { label: 'Root', href: '#top', glyph: '[]', active: true },
-  { label: 'Projects', href: '#projects', glyph: '>_', active: false },
-  { label: 'About', href: '#experience', glyph: '{}', active: false },
+  { label: 'Root', href: '#top', glyph: 'folder', active: true },
+  { label: 'Projects', href: '#projects', glyph: 'terminal', active: false },
+  { label: 'About', href: '#experience', glyph: 'person', active: false },
 ] satisfies readonly SideLink[]
 
 export const projects = [
@@ -198,18 +200,34 @@ export const connectionFacts = [
 export const contactRows = [
   {
     key: 'email_address',
-    value: 'hello@archon.dev',
-    href: 'mailto:hello@archon.dev',
+    value: 'konstantinkulebaev@gmail.com',
+    href: 'mailto:konstantinkulebaev@gmail.com',
+    accent: 'primary',
   },
-  { key: 'github_handle', value: 'github.com/archon-dev', href: 'https://github.com/archon-dev' },
-  { key: 'linkedin_id', value: 'linkedin.com/in/archon', href: 'https://linkedin.com/in/archon' },
-  { key: 'twitter_x', value: '@archon_ui', href: 'https://x.com/archon_ui' },
+  {
+    key: 'github_handle',
+    value: 'github.com/kkulebaev',
+    href: 'https://github.com/kkulebaev',
+    accent: 'secondary',
+  },
+  {
+    key: 'linkedin_id',
+    value: 'linkedin.com/in/kkulebaev',
+    href: 'https://linkedin.com/in/kkulebaev',
+    accent: 'tertiary',
+  },
+  {
+    key: 'twitter_x',
+    value: '@kkulebaev',
+    href: 'https://x.com/kkulebaev',
+    accent: 'primary',
+  },
 ] satisfies readonly ContactRow[]
 
 export const systemFooter = [
-  { label: 'SYS_READY', value: '0.0.0.0:3000' },
+  { label: 'SYS_READY', value: '0.0.0.0:3000', accent: 'lime' },
   { label: 'BRANCH', value: 'MAIN' },
   { label: 'UTF-8', value: '' },
   { label: 'TYPESCRIPT', value: '' },
-  { label: 'LATENCY', value: '12ms' },
+  { label: 'LATENCY', value: '12ms', accent: 'white' },
 ] satisfies readonly SysbarItem[]

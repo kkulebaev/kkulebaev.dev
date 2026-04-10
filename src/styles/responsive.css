@@ -1,14 +1,11 @@
-@media (max-width: 1080px) {
-  .siderail {
-    display: none;
+/* Mobile adjustments */
+@media (max-width: 760px) {
+  .topbar {
+    padding: 0.75rem 1.1rem;
   }
 
-  .page {
-    margin-left: 0;
-  }
-
-  .sysbar {
-    padding-left: 1rem;
+  .topbar__path {
+    white-space: nowrap;
   }
 
   .hero {
@@ -16,80 +13,18 @@
     padding-top: 3rem;
   }
 
-  .project-grid,
-  .stack-layout,
-  .experience-layout__grid,
-  .contact-panel,
-  .section__heading--split {
-    grid-template-columns: 1fr;
-  }
-
-  .stack-layout__groups {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .section__meta {
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 760px) {
-  .topbar {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 0.85rem 1.1rem;
-  }
-
-  .topbar__nav {
-    flex: 1;
-    min-width: 0;
-    justify-content: center;
-    gap: 1rem;
-    overflow-x: auto;
-  }
-
-  .topbar__path {
-    white-space: nowrap;
-  }
-
-  .topbar__status {
-    white-space: nowrap;
-    padding: 0.45rem 0.65rem;
-    font-size: 0.66rem;
-  }
-
-  .hero,
-  .section {
-    padding-inline: 1.2rem;
-  }
-
-  .section--band {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-
   .hero h1 {
     font-size: clamp(3.2rem, 18vw, 4.75rem);
   }
 
   .hero__lede,
-  .stack-layout__intro p:last-child,
-  .timeline p,
-  .contact-panel__copy p:last-of-type,
   .project-card p {
     font-size: 0.95rem;
   }
 
-  .contact-panel__meta {
-    font-size: 0.6rem;
-  }
-
-  .stack-layout__groups {
-    grid-template-columns: 1fr;
-  }
-
-  .timeline__item {
-    grid-template-columns: 1fr;
+  .section--band {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .contact-cta__actions {
@@ -98,9 +33,5 @@
 
   .contact-cta__actions .button {
     flex: 1;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
   }
 }

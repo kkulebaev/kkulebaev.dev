@@ -3,17 +3,18 @@
   flex-direction: column;
   justify-content: center;
   min-height: 51.2rem;
+  padding-inline: clamp(1.25rem, 3vw, 5rem);
   padding-top: 3.25rem;
   padding-bottom: 4.5rem;
 }
 
 .hero__copy {
-  width: min(100%, 39rem);
+  width: min(100%, 36rem);
 }
 
 .hero h1 {
-  font-size: clamp(4.9rem, 10.4vw, 8rem);
-  line-height: 0.89;
+  font-size: clamp(4.2rem, 9vw, 7rem);
+  line-height: 0.92;
   letter-spacing: -0.065em;
 }
 
@@ -216,7 +217,7 @@
 
 .stack-layout__groups {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2rem;
 }
 
@@ -345,6 +346,58 @@
   font-size: 0.62rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.contact-window {
+  width: min(100%, 68rem);
+  margin: 3rem auto 0;
+}
+
+.contact-window__body {
+  gap: 1.25rem;
+}
+
+.contact-window__status {
+  margin: 0;
+  color: rgba(229, 226, 225, 0.44);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-window__status span {
+  color: var(--lime);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 2.5rem;
+}
+
+.contact-grid__item {
+  display: grid;
+  gap: 0.35rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(132, 147, 150, 0.18);
+  transition: border-color 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.contact-grid__item:hover {
+  border-left-color: rgba(0, 229, 255, 0.65);
+}
+
+.contact-grid__key {
+  color: rgba(229, 226, 225, 0.34);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-grid__value {
+  color: rgba(229, 226, 225, 0.82);
+  font-size: 0.92rem;
+  font-weight: 400;
 }
 
 .contact-terminal {

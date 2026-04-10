@@ -18,11 +18,14 @@
 
   .project-grid,
   .stack-layout,
-  .stack-layout__groups,
   .experience-layout__grid,
   .contact-panel,
   .section__heading--split {
     grid-template-columns: 1fr;
+  }
+
+  .stack-layout__groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .section__meta {
@@ -69,6 +72,10 @@
     font-size: 0.6rem;
   }
 
+  .stack-layout__groups {
+    grid-template-columns: 1fr;
+  }
+
   .timeline__item {
     grid-template-columns: 1fr;
   }
@@ -79,5 +86,9 @@
 
   .contact-cta__actions .button {
     flex: 1;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }

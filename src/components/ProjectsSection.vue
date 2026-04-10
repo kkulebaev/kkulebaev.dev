@@ -10,7 +10,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <section id="projects" class="section section--offset">
+  <section id="repositories" class="section section--offset">
     <div class="section__heading section__heading--split">
       <div>
         <p class="eyebrow">&gt; _repositories</p>

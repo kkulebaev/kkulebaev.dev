@@ -2,6 +2,7 @@
 import AppSiderail from './components/AppSiderail.vue'
 import AppTopbar from './components/AppTopbar.vue'
 import ContactSection from './components/ContactSection.vue'
+import CtaSection from './components/CtaSection.vue'
 import HeroSection from './components/HeroSection.vue'
 import LabsSection from './components/LabsSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
@@ -22,16 +23,16 @@ import {
 </script>
 
 <template>
-  <div id="top" class="shell">
+  <div id="whoami" class="shell">
     <AppTopbar :path="shellMeta.path" :status="shellMeta.status" :links="navLinks" />
     <AppSiderail :meta="shellMeta" :links="sideLinks" />
 
     <main class="page">
       <HeroSection :available="availableForHire" />
       <ProjectsSection :projects="projects" :accents="projectCardAccents" />
-      <div id="experience" class="anchor" aria-hidden="true"></div>
       <LabsSection :groups="stackGroups" />
-      <ContactSection :connection-facts="connectionFacts" :contact-rows="contactRows" />
+      <CtaSection :connection-facts="connectionFacts" />
+      <ContactSection :contact-rows="contactRows" />
     </main>
 
     <Sysbar :items="systemFooter" />

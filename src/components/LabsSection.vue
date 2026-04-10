@@ -9,7 +9,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <section id="labs" class="section section--band">
+  <section id="stack" class="section section--band">
     <div class="stack-layout">
       <div class="stack-layout__intro">
         <p class="eyebrow eyebrow--secondary">&gt; _stack_analysis</p>

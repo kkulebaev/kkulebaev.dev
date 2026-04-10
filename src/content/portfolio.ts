@@ -78,16 +78,17 @@ export const shellMeta: ShellMeta = {
 }
 
 export const navLinks: readonly NavLink[] = [
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Labs', href: '#labs' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'whoami', href: '#whoami' },
+  { label: '_repositories', href: '#repositories' },
+  { label: '_stack', href: '#stack' },
+  { label: '_download_cv', href: '#download_cv' },
+  { label: '_contacts', href: '#contacts' },
 ]
 
 export const sideLinks: readonly SideLink[] = [
-  { label: 'Root', href: '#top', glyph: 'folder', active: true },
-  { label: 'Projects', href: '#projects', glyph: 'terminal', active: false },
-  { label: 'About', href: '#experience', glyph: 'person', active: false },
+  { label: 'Root', href: '#whoami', glyph: 'folder', active: true },
+  { label: 'Projects', href: '#repositories', glyph: 'terminal', active: false },
+  { label: 'About', href: '#stack', glyph: 'person', active: false },
 ]
 
 // ── Projects ──

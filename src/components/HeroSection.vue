@@ -17,7 +17,7 @@
           <span>GITHUB</span>
           <span class="material-symbols-outlined hero-link__icon">arrow_outward</span>
         </a>
-        <a class="hero-link hero-link--secondary" href="#contact">
+        <a class="hero-link hero-link--secondary" href="#contacts">
           <span class="hero-link__prefix">&gt;</span>
           <span>CONTACT</span>
           <span class="material-symbols-outlined hero-link__icon">mail</span>

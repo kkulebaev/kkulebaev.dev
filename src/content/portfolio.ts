@@ -229,5 +229,4 @@ export const systemFooter: readonly SysbarItem[] = [
   { label: 'BRANCH', value: 'MAIN' },
   { label: 'UTF-8', value: '' },
   { label: 'TYPESCRIPT', value: '' },
-  { label: 'LATENCY', value: '12ms', accent: 'white' },
 ]

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import AppSiderail from './components/AppSiderail.vue'
 import AppTopbar from './components/AppTopbar.vue'
 import ContactSection from './components/ContactSection.vue'
@@ -7,6 +8,7 @@ import HeroSection from './components/HeroSection.vue'
 import LabsSection from './components/LabsSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import Sysbar from './components/Sysbar.vue'
+import { useLatency } from './composables/useLatency'
 
 import {
   availableForHire,
@@ -20,6 +22,13 @@ import {
   stackGroups,
   systemFooter,
 } from './content/portfolio'
+
+const { latency } = useLatency()
+
+const sysbarItems = computed(() => [
+  ...systemFooter,
+  { label: 'LATENCY', value: latency.value, accent: 'white' as const },
+])
 </script>
 
 <template>
@@ -35,6 +44,6 @@ import {
       <ContactSection :contact-rows="contactRows" />
     </main>
 
-    <Sysbar :items="systemFooter" />
+    <Sysbar :items="sysbarItems" />
   </div>
 </template>

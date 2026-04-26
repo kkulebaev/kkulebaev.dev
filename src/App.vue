@@ -5,8 +5,8 @@ import AppTopbar from './components/AppTopbar.vue'
 import ContactSection from './components/ContactSection.vue'
 import CtaSection from './components/CtaSection.vue'
 import HeroSection from './components/HeroSection.vue'
-import LabsSection from './components/LabsSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
+import StackSection from './components/StackSection.vue'
 import Sysbar from './components/Sysbar.vue'
 import { useLatency } from './composables/useLatency'
 
@@ -14,6 +14,7 @@ import {
   availableForHire,
   connectionFacts,
   contactRows,
+  cvAvailable,
   navLinks,
   projectCardAccents,
   projects,
@@ -24,6 +25,9 @@ import {
 } from './content/portfolio'
 
 const { latency } = useLatency()
+
+// Home shows the first N projects from the whitelist; full list will live on a separate route.
+const featuredProjects = computed(() => projects.slice(0, 3))
 
 const sysbarItems = computed(() => [
   ...systemFooter,
@@ -38,9 +42,9 @@ const sysbarItems = computed(() => [
 
     <main class="page">
       <HeroSection :available="availableForHire" />
-      <ProjectsSection :projects="projects" :accents="projectCardAccents" />
-      <LabsSection :groups="stackGroups" />
-      <CtaSection :connection-facts="connectionFacts" />
+      <ProjectsSection :projects="featuredProjects" :accents="projectCardAccents" />
+      <StackSection :groups="stackGroups" />
+      <CtaSection :connection-facts="connectionFacts" :cv-available="cvAvailable" />
       <ContactSection :contact-rows="contactRows" />
     </main>
 

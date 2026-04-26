@@ -19,10 +19,15 @@ defineProps<Props>()
       <p class="section__meta">LS -AL /PROJECTS <span>{{ projects.length }} OBJECTS FOUND</span></p>
     </div>
 
-    <div class="project-grid">
+    <div v-if="projects.length === 0" class="project-empty">
+      <span class="project-empty__prompt">$</span>
+      <span>no projects published yet</span>
+    </div>
+
+    <div v-else class="project-grid">
       <article
         v-for="(project, index) in projects"
-        :key="project.title"
+        :key="project.slug"
         class="project-card"
         :class="`project-card--${accents[index % accents.length]}`"
       >
@@ -32,24 +37,19 @@ defineProps<Props>()
             <span></span>
             <span></span>
           </div>
-          <span>{{ project.version }}</span>
-        </div>
-
-        <div class="project-card__image-wrap">
-          <img :src="project.image" :alt="project.title" class="project-card__image" loading="lazy" />
         </div>
 
         <div class="project-card__body">
           <h3>{{ project.title }}</h3>
           <p>{{ project.description }}</p>
 
-          <div class="project-card__tags">
+          <div v-if="project.tags && project.tags.length" class="project-card__tags">
             <span v-for="tag in project.tags" :key="tag">{{ tag }}</span>
           </div>
 
           <div class="project-card__actions">
             <a class="button button--primary" :href="project.codeHref" target="_blank" rel="noreferrer">VIEW_CODE</a>
-            <a class="button button--panel" :href="project.demoHref">LIVE_DEMO</a>
+            <a v-if="project.demoHref" class="button button--panel" :href="project.demoHref" target="_blank" rel="noreferrer">LIVE_DEMO</a>
           </div>
         </div>
       </article>

@@ -3,13 +3,14 @@ import type { KVPair } from '../content/portfolio'
 
 type Props = {
   connectionFacts: readonly KVPair[]
+  cvAvailable: boolean
 }
 
 defineProps<Props>()
 </script>
 
 <template>
-  <section id="download_cv" class="section section--contact-cta">
+  <section id="cta" class="section section--contact-cta">
     <div class="section__heading section__heading--center">
       <p class="eyebrow">Initialize Connection</p>
       <h2>Ready to architect the next standard?</h2>
@@ -20,7 +21,7 @@ defineProps<Props>()
         <a class="button button--primary" href="https://t.me/kkulebaev" target="_blank" rel="noreferrer">
           START_CHAT <span class="material-symbols-outlined button__icon">send</span>
         </a>
-        <a class="button button--panel" href="https://github.com/kkulebaev" target="_blank" rel="noreferrer">DOWNLOAD_CV</a>
+        <a v-if="cvAvailable" class="button button--panel" href="/cv.pdf" target="_blank" rel="noreferrer">DOWNLOAD_CV</a>
       </div>
 
       <div class="contact-cta__facts">

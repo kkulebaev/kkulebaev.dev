@@ -4,22 +4,22 @@
       <span class="hero__eyebrow">
         <span class="hero__eyebrow-mark">$</span> whoami
       </span>
-      <h1>Frontend<br /><span>Developer</span></h1>
+      <h1>Software<br /><span>Engineer</span></h1>
     </div>
     <div class="hero__body">
       <p class="hero__lede">
-        Building clean, code-driven UI for the next-gen web. Specializing in high-performance architectures and
-        architecting digital spaces that bridge technical logic with human intuition.
+        Building clean, code-driven products for the modern web. Software engineering with a deep frontend
+        focus — equally at home across the full stack, where technical logic meets product intuition.
       </p>
       <div class="hero__actions">
-        <a class="hero-link" href="https://github.com/kkulebaev" target="_blank" rel="noreferrer">
+        <a class="hero-link" href="#repositories">
           <span class="hero-link__prefix">&gt;</span>
-          <span>GITHUB</span>
-          <span class="material-symbols-outlined hero-link__icon">arrow_outward</span>
+          <span>VIEW_WORK</span>
+          <span class="material-symbols-outlined hero-link__icon">arrow_forward</span>
         </a>
         <a class="hero-link hero-link--secondary" href="#contacts">
           <span class="hero-link__prefix">&gt;</span>
-          <span>CONTACT</span>
+          <span>GET_IN_TOUCH</span>
           <span class="material-symbols-outlined hero-link__icon">mail</span>
         </a>
         <div class="availability" :class="{ 'availability--unavailable': !available }">

@@ -68,7 +68,7 @@ export type SysbarItem = {
 export const availableForHire = false
 
 // Flip to true once `/cv.pdf` is published in `public/`.
-export const cvAvailable = false
+export const cvAvailable = true
 
 // ── Shell ──
 

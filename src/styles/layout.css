@@ -96,7 +96,7 @@
   width: var(--siderail-w);
   height: 100vh;
   gap: var(--space-12);
-  padding: var(--space-20) 0 var(--space-6);
+  padding: var(--space-20) 0 calc(var(--sysbar-h) + var(--space-6));
   background: var(--color-surface-lowest);
 }
 
@@ -180,6 +180,8 @@
   letter-spacing: 0.1em;
   background: var(--color-primary-container);
   color: var(--color-on-primary);
+  border: 0;
+  cursor: pointer;
   transition: background var(--duration-normal);
 }
 
